@@ -11,7 +11,7 @@ YOLOv9 Object Detection with DeepSORT Tracking(ID + Trails) </H1>
 
 - Clone the repository
 ```
-git clone https://github.com/MuhammadMoinFaisal/YOLOv9-DeepSORT-Object-Tracking.git
+git clone https://github.com/tusharpunishthem/deepsortyolov9obj.git
 ```
 - Goto the cloned folder.
 ```
