@@ -50,7 +50,8 @@ print("Number of CUDA Devices:", torch.cuda.device_count())
 print("Current CUDA Device:", torch.cuda.current_device())
 
 Output: if the device turn out to be zero Follow below steps -
-Install Nvidia Cuda toolkit - "https://developer.nvidia.com/cuda-12-0-0-download-archive"
+Install Nvidia Cuda toolkit -
+```"https://developer.nvidia.com/cuda-12-0-0-download-archive"```
 Now check cuda version : nvcc --version
 In your conda prompt type: device = torch.device("cuda:0")  # Use the first GPU
 conda install cuda --channel nvidia/label/cuda-12.0
