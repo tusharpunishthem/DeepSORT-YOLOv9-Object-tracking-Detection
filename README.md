@@ -58,7 +58,7 @@ cuda will be installed!
 ```
 
 
-
+```
 # for detection only
 python detect_dual.py --weights 'yolov9-c.pt' --source 'your video.mp4' --device 0 --view-img
 
