@@ -1,5 +1,5 @@
 <H1 align="center">
-YOLOv9 Object Detection with DeepSORT Tracking(ID + Trails) </H1>
+YOLOv9 Object Detection with DeepSORT Tracking(ID + Trails) for Both CPU & GPU </H1>
 
 ### New Features
 - Added Label for Every Track
@@ -15,7 +15,12 @@ git clone https://github.com/tusharpunishthem/deepsortyolov9obj.git
 ```
 - Goto the cloned folder.
 ```
-cd YOLOv9-DeepSORT-Object-Tracking
+cd deepsortyolov9obj
+```
+Create conda environment Python 3.10
+```
+conda create -n yolov9_tracking python=3.10
+conda activate yolov9_tracking
 ```
 - Install requirements with mentioned command below.
 ```
@@ -36,26 +41,44 @@ gdown "https://drive.google.com/uc?id=115RBSjNQ_1zjvKFRsQK2zE8v8BIRrpdy&confirm=
 gdown "https://drive.google.com/uc?id=1rjBn8Fl1E_9d0EMVtL24S9aNQOJAveR5&confirm=t"
 ```
 ```
+```
+Check if cuda is available or not for GPU (ensure that you got NVIDIA GPU)
+1.Type "python" in anaconda environment
+2.import torch
+
+print("Number of CUDA Devices:", torch.cuda.device_count())
+print("Current CUDA Device:", torch.cuda.current_device())
+
+Output: if the device turn out to be zero Follow below steps -
+Install Nvidia Cuda toolkit - "https://developer.nvidia.com/cuda-12-0-0-download-archive"
+Now check cuda version : nvcc --version
+In your conda prompt type: device = torch.device("cuda:0")  # Use the first GPU
+conda install cuda --channel nvidia/label/cuda-12.0
+cuda will be installed!
+```
+
+
+
 # for detection only
-python detect_dual.py --weights 'yolov9-c.pt' --source 'your video.mp4' --device 0
+python detect_dual.py --weights 'yolov9-c.pt' --source 'your video.mp4' --device 0 --view-img
 
 #for detection and tracking
-python detect_dual_tracking.py --weights 'yolov9-c.pt' --source 'your video.mp4' --device 0
+python detect_dual_tracking.py --weights 'yolov9-c.pt' --source 'your video.mp4' --device 0 --view-img
 
 #for WebCam
-python detect_dual_tracking.py --weights 'yolov9-c.pt' --source 0 --device 0
+python detect_dual_tracking.py --weights 'yolov9-c.pt' --source 0 --device 0 --view-img
 
 #for External Camera
 python detect_dual_tracking.py --weights 'yolov9-c.pt' --source 1 --device 0
 
 #For LiveStream (Ip Stream URL Format i.e "rtsp://username:pass@ipaddress:portno/video/video.amp")
-python detect_dual_tracking.py --weights 'yolov9-c.pt' --source "your IP Camera Stream URL" --device 0
+python detect_dual_tracking.py --weights 'yolov9-c.pt' --source "your IP Camera Stream URL" --device 0 --view-img
 
 #for specific class (person)
-python detect_dual_tracking.py --weights 'yolov9-c.pt' --source 'your video.mp4' --device 0 --classes 0
+python detect_dual_tracking.py --weights 'yolov9-c.pt' --source 'your video.mp4' --device 0 --classes 0 --view-img
 
 #for detection and tracking with trails 
-!python detect_dual_tracking.py --weights 'yolov9-c.pt' --source 'your video.mp4' --device 0 --draw-trails 
+!python detect_dual_tracking.py --weights 'yolov9-c.pt' --source 'your video.mp4' --device 0 --draw-trails --view-img
 ```
 
 - Output file will be created in the ```working-dir/runs/detect/obj-tracking``` with original filename
