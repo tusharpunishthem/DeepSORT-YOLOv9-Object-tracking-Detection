@@ -40,7 +40,7 @@ gdown "https://drive.google.com/uc?id=11ZSZcG-bcbueXZC3rN08CM0qqX3eiHxf&confirm=
 gdown "https://drive.google.com/uc?id=115RBSjNQ_1zjvKFRsQK2zE8v8BIRrpdy&confirm=t"
 gdown "https://drive.google.com/uc?id=1rjBn8Fl1E_9d0EMVtL24S9aNQOJAveR5&confirm=t"
 ```
-```
+
 ```
 Check if cuda is available or not for GPU (ensure that you got NVIDIA GPU)
 1.Type "python" in anaconda environment
